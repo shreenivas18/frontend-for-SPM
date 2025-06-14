@@ -1,5 +1,4 @@
 import Link from "next/link";
-import AnimatedWaveBackground from "@/components/ui/animated-wave-background";
 import GeneratorCard from "@/components/ui/generator-card";
 
 
@@ -32,26 +31,18 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full p-4">
-      <AnimatedWaveBackground />
-      <header className="w-full max-w-5xl flex justify-end p-4 absolute top-0 right-0">
-        <Link href="dashboard/settings" className="text-indigo-400 hover:text-indigo-300 transition text-sm font-medium glass px-4 py-2 rounded-lg border border-indigo-400/30">
-            Profile & Settings
+    <div className="flex items-center justify-center w-full gap-8">
+      {generators.map((generator, index) => (
+        <Link href={generator.href} key={index}>
+            <GeneratorCard
+              tag={generator.tag}
+              title={generator.title}
+              description={generator.description}
+              imageUrl={generator.imageUrl}
+              hoverTheme={generator.hoverTheme}
+            />
         </Link>
-      </header>
-      <main className="flex-grow flex items-center justify-center w-full gap-8">
-        {generators.map((generator, index) => (
-          <Link href={generator.href} key={index}>
-              <GeneratorCard
-                tag={generator.tag}
-                title={generator.title}
-                description={generator.description}
-                imageUrl={generator.imageUrl}
-                hoverTheme={generator.hoverTheme}
-              />
-          </Link>
-        ))}
-      </main>
+      ))}
     </div>
   );
 }
