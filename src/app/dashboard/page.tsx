@@ -1,5 +1,5 @@
 import Link from "next/link";
-import GeneratorCard from "@/components/ui/generator-card";
+import GeneratorCard from "@/components/Dashboard/generator-card";
 
 
 export default function DashboardPage() {
@@ -31,7 +31,7 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="flex items-center justify-center w-full gap-8">
+    <div className="flex items-center justify-center w-full gap-12">
       {generators.map((generator, index) => (
         <Link href={generator.href} key={index}>
             <GeneratorCard

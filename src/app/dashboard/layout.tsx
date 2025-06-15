@@ -1,5 +1,5 @@
 import AnimatedWaveBackground from "@/components/ui/animated-wave-background";
-import DashboardNav from "@/components/ui/dashboard-nav";
+import DashboardNav from "@/components/Dashboard/dashboard-nav";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,7 +9,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <span className="text-white font-bold text-lg">AI Content Team</span>
         <DashboardNav />
       </header>
-      <main className="flex-grow flex items-center justify-center w-full">
+      <main className="flex-grow flex items-center justify-center w-full pt-24">
         {children}
       </main>
     </div>
